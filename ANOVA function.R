@@ -5,7 +5,7 @@
 # sense of it.
 
 ### Definition:
-# data : takes a data frame containing all variables of interest: independent variable, dependent variable, within-subjects variable.
+# data : takes a data frame containing all variables of interest: independent variable, dependent variable, within-subjects variable, subject (optional).
 # ind.var : takes a vector containing the names of the independent variables of interest shown in the data frame.
 # dep.var : takes a vector containing the name of the dependent variable of interest shown in the data frame.
 # within : takes a vector containing the names of the within-subjects variables of interest shown in the data frame. As DEFAULT, within is an empty vector.
