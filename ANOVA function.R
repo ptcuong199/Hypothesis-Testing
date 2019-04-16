@@ -1,4 +1,17 @@
-anova <- function(data, ind.var, dep.var, within, tukey = FALSE) {
+### The function below is an improvised analysis of variance using a built-in ANOVA function, aov(), and TukeyHSD(). This function is only
+# designed for three-way and four-way ANOVA, specifically, three-between ANOVA, three-between one-within ANOVA, three-between two-within ANOVA,
+# four-between ANOVA, four-between one-within ANOVA, four-between two-within ANOVA. In order to use this function, we need to manually
+# specify the name shown in the data frame for the corresponding variable type. The definition of each of the arugments below will make
+# sense of it.
+
+### Definition:
+# data : takes a data frame containing all variables of interest: independent variable, dependent variable, within-subjects variable.
+# ind.var : takes a vector containing the names of the independent variables of interest shown in the data frame.
+# dep.var : takes a vector containing the name of the dependent variable of interest shown in the data frame.
+# within : takes a vector containing the names of the within-subjects variables of interest shown in the data frame. As DEFAULT, within is an empty vector.
+# tukey : takes a logical. As DEFAULT, tukey is set to FALSE. If a pair-wise comparison for each variable is desired, set tukey to TRUE. When the null hypothesis is rejected, the function will also return results from the pair-wise comparison.
+
+anova <- function(data, ind.var, dep.var, within = c(), tukey = FALSE) {
   data <- data
   ind.var <- ind.var
   dep.var <- dep.var
