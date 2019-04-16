@@ -86,4 +86,12 @@ anova <- function(data, ind.var, dep.var, within = c(), tukey = FALSE) {
 
 ### unlist(data_frame["name_of_the_column"]) == data_frame$name_of_the_column. 
 # If dep.var contains a string character of name_of_the_column, we can do unlist(data_frame[dep.var]) to retrieve the results similar to
-# data_frame$name_of_the_column
+# data_frame$name_of_the_column.
+
+### Example:
+vit <- read.csv("vitamin3.csv")
+names(vit) 
+[1] "effort" "dose"   "gender" "type"
+dep.var <- "effort"
+ind.var <- c("dose", "gender", "type")
+anova(vit, ind.var, dep.var, tukey = TRUE)
