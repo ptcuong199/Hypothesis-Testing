@@ -1,17 +1,16 @@
 # homoskedasticity
-### This is a normality testing function that returns quantile-quantile plot, hisogram, and results from Shapiro-Francia test for normality. 
-# As a means of practicing R programming, I used tidy evaluation for creating a quoting function. You will see or might have seen other quoting 
-
-# funcions that I created. They include the homo_skes() function (testing for homoskedasticity) and the auto_cor() function (testing for autocorrelation).
+### This is a homoskedasticity testing function that returns the residual plot, summary of the linear regression model, and results 
+# from Goldfeld-Quandt and Breusch-Pagan test for homoskedasticity. As a means of practicing R programming, I used tidy evaluation for 
+# creating a quoting function. You will see or might have seen other quoting funcions that I created. They include the norm_test() function (testing for normality) 
+# and the auto_cor() function (testing for autocorrelation).
 
 
 
 ### Definition:
 
 # data : takes an argument containing the data of interest
-
-# y : takes a name or an expression as an argument, instead of a string character
-
+# x: takes the name or the expression of the independent variable as an argument, instead of a string character.
+# y : takes the name or the expression of the dependent variable as an argument, instead of a string character
 # usage: takes a logical argument. As DEFAULT, usage is set to FALSE, which let the function does its job. When set to TRUE, the function returns the packages and the related functions being used within that function.
 
 install.packages("broom")
