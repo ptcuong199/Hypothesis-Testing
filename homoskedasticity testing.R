@@ -4,10 +4,7 @@
 # creating a quoting function. You will see or might have seen other quoting funcions that I created. They include the norm_test() function (testing for normality) 
 # and the auto_cor() function (testing for autocorrelation).
 
-
-
 ### Definition:
-
 # data : takes an argument containing the data of interest
 # x: takes the name or the expression of the independent variable as an argument, instead of a string character.
 # y : takes the name or the expression of the dependent variable as an argument, instead of a string character
