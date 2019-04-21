@@ -1,4 +1,13 @@
-# normality, multicollinearity, homogeneity of variances
+# normality testing
+
+### This is a normality testing function that returns quantile-quantile plot, hisogram, and results from Shapiro-Francia test for normality. 
+# As a means of practicing R programming, I used tidy evaluation for creating a quoting function. You will see or might have seen other quoting 
+# funcions that I created. They include the homo_skes() function (testing for homoskedasticity) and the auto_cor() function (testing for autocorrelation).
+
+### Definition:
+# data : takes an argument containing the data of interest
+# y : takes a name or an expression as an argument, instead of a string character
+# usage: takes a logical argument. As DEFAULT, usage is set to FALSE, which let the function does its job. When set to TRUE, the function returns the packages and the related functions being used within that function.
 
 library(ggplot2)
 library(dplyr)
@@ -19,8 +28,7 @@ norm.test <- function(data, y, usage = FALSE) {
   hist <- ggplot(aes(x = !!y_1), data = data) + 
     geom_histogram(binwidth = 1, position = 'stack', stat = 'bin') 
   graph <- grid.arrange(qqplot, hist, ncol =1)
-  
-  # Codes for using a function inside a function when y is not a character string
+ 
   y_2 <- deparse(substitute(y))
   data_1 <- deparse(substitute(data)) 
   data_1 <- get(data_1)
@@ -43,9 +51,3 @@ norm.test <- function(data, y, usage = FALSE) {
 ### https://stackoverflow.com/questions/54377005/applicate-function-on-dataframe-in-r 
 ### https://stackoverflow.com/questions/46834655/whats-the-difference-between-substitute-and-quote-in-r 
 ### https://www.r-bloggers.com/programming-with-dplyr-by-using-dplyr/ 
-
-geom_histogram(binwidth = 1, aes(y = ...density...)) + 
-  stat_function(fun = dnorm, col = "red", args = list(mean = mean(x), sd = sd(y))) +
-  scale_x_continuous(limits = c(0, max(x))) # to draw a normal curve over a histogram
-
-# If p > 0.05 in shapiro-francia test, the distribution of the data equals the normal distribution
