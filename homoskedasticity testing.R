@@ -38,7 +38,7 @@ homo_skes <- function(data, x, y, usage = FALSE) {
   results <- list(summary, residual_plot, goldfeld_quandt, breusch_pagan)
   if(usage == TRUE){
     tidy <- print("broom package required for using tidy() function")
-    gq <- print("lmtest package required for using Goldfeld-Quandt test for normality")
+    gq <- print("lmtest package required for using Goldfeld-Quandt test for homoskedasticity")
     other <- print("dpyr, ggplot2 packages are also required")
     codes <- list(tidy, gq, other)
     return(codes)
